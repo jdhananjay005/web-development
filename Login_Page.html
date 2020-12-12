@@ -1,0 +1,82 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-image: url(hero-background-15.jpg);  
+}  
+button {   
+       background-color: #3385ff;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border:  5px solid #f1f1f1;
+        
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 10px 0;  
+        padding: 12px 10px;   
+        display: inline-block;   
+        border: 2px solid rgb(28, 58, 226);   
+           
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }       
+ .container {   
+        padding: 40px;   
+        background-image: rgb(102, 179, 241);  
+        margin: auto;
+        margin: auto;
+        width: 50%;
+    
+    }   
+    .h1 {
+        font-weight: bold;
+        font-size: 100px;
+    }
+</style>   
+</head>   
+     <script>
+        function check()
+        {
+            var username = document.getElementsByClassName("username");
+            var password = document.getElementsByClassName("password");
+
+
+            if (username.value==""|| password.value =="")
+                {
+                alert ("no blank values allowed");
+                return false; 
+                }
+            else
+                {
+                return true;
+                }
+        }
+
+    </script> 
+<body>    
+    <center> <h1> Student Login </h1> </center>   
+        <div>   
+            <form class="container" onsubmit="return check()" action="message.html">
+                <label><b>Username : </b></label>   
+                <input type="text" placeholder=" Enter Username" name="username" required>  
+                <label> <b>Password :</b> </label>   
+                <input type="password" placeholder="Enter Password" name="password" required>  
+                <button type="submit">Login</button> 
+                <input type="checkbox" checked="checked"> <b>Remember me </b>     
+                Forgot <a href="#"> password? </a>   
+            </form>
+        </div>   
+         
+</body>     
+</html> 
