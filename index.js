@@ -6,10 +6,6 @@ const morgan = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
 const db = require("./models");
-// const professionalRoutes = require("./routes/professional");
-
-// var ObjectId = mongoose.Schema.ObjectId;
-
 const app = express();
 
 app.set("view engine", "ejs");
