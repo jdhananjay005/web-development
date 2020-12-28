@@ -10,6 +10,6 @@ mongoose.connect("mongodb+srv://User:User@cluster0.vyg72.mongodb.net/StudentPort
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
-});
+}).then(() => {console.log("connected to mangodb")}).catch((err) => {console.log("error connecting to mongdb", err)});
 
 module.exports.User = require("./user");
