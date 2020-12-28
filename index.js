@@ -39,6 +39,7 @@ passport.deserializeUser(function (id, done) {
 });
 
 app.use("/student", require("./routes/student"));
+app.use("/teacher", require("./routes/teacher"))
 
 app.use((req, res, next) => {
   let err = new Error('Page Not Found');

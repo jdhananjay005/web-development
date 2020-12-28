@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const db = require("../models");
 const router = express.Router({mergeParams: true});
-const {login, register} = require("../handlers/auth");
+const {login, register} = require("../handlers/teacherauth");
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
 
     // By default, multer removes file extensions so let's add them back
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        cb(null, file.fieldname + '-' + req.query.sub + path.extname(file.originalname));
     }
 });
 
@@ -21,30 +21,30 @@ const storage = multer.diskStorage({
 
 router.get("/", function (req, res) {
     if (req.isAuthenticated()) {
-        res.render("student/dashboard");
+        res.render("teacher/dashboard");
     } else {
         // res.render("start");
-        res.redirect("/student/auth")
+        res.redirect("/teacher/auth")
     }
 });
 
 router.get("/assignments", function (req, res) {
     if (req.isAuthenticated()) {
-        res.render("student/ha");
+        res.render("teacher/ha");
     } else {
         // res.render("start");
-        res.redirect("/student/auth")
+        res.redirect("/teacher/auth")
     }
 });
 
 router.get("/assignments/download", function (req, res) {
-    const file = `uploads/profile_pic-1609143742464`;
+    const file = `uploads/sub-${req.query.sub}.pdf`;
     res.download(file); // Set disposition and send it.
 });
 
 router.post('/assignments/upload', (req, res) => {
     // 'profile_pic' is the name of our file input field in the HTML form
-    let upload = multer({storage: storage}).single('profile_pic');
+    let upload = multer({storage: storage}).single(`sub`);
 
     upload(req, res, function (err) {
         // req.file contains information of uploaded file
@@ -64,7 +64,7 @@ router.post('/assignments/upload', (req, res) => {
         }
 
         // Display uploaded image for user validation
-        res.redirect("/student/assignments")
+        res.redirect("/teacher/assignments")
     });
 });
 
@@ -89,9 +89,9 @@ router.post('/assignments/upload', (req, res) => {
 
 router.get("/auth", function (req, res) {
     if (req.isAuthenticated()) {
-        res.render("student/dashboard");
+        res.render("teacher/dashboard");
     } else {
-        res.render("student/auth");
+        res.render("teacher/auth");
         // console.log("");
     }
 });
@@ -116,7 +116,7 @@ router.get("/logout", function (req, res) {
     if (req.isAuthenticated()) {
         req.logout();
     }
-    res.redirect("/student/");
+    res.redirect("/teacher/");
 });
 
 // router.post("/forgot", forgot);

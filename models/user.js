@@ -11,6 +11,9 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		createIndexes: true,
 	},
+    role: {
+        type: String
+    },
 	resetPasswordToken: String,
 	resetPasswordExpires: Date,
 });

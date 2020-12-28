@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Sidebar Dashboard </title>
+  <link rel="stylesheet" href="Tstyle1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+  <!--Wrapper start-->
+  <div class="wrapper">
+    <!--header menu start--> 
+    <div class="header">
+      <div class="header-menu">
+        <div class="title">STD<span> PORTAL</span></div>
+        <div class="sidebar-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+          <li><a href="#"><i class="fas fa-search"></i></a></li>
+          <li><a href="#"><i class="fas fa-bell"></i></a></li>
+          <li><a href="TeacherFrontend.html"><i class="fas fa-power-off"></i></a></li>      
+          </ul>
+      </div>
+    </div>
+  <!--header menu end -->
+  <!--Sidebar strat-->
+  <div class="sidebar">
+    <div class="sidebar-menu">
+      <center class="profile">
+      <img src="" alt="">
+      <p>VINAY KULKARNI</p>
+      </center>
+      <!--Dashboard-->
+        <li class="item">
+        <a href="#" class="menu-btn">
+          <i class="fas fa-desktop"></i><span>Dashboard</span>  
+        </a>
+        </li>
+        <!--Dashboard End-->
+        <!--Academic Start-->
+        <li class="item" id="profile">
+         <a href="#profile" class="menu-btn">
+          <i class="fas fa-chart-line"></i><span>Academics<i class="fas fa-chevron-down drop-down"></i></span>
+         </a>
+         <div class="sub-menu">
+           <a href="TeacherHA.html"><i class="fas fa-tasks"></i><span>Home Assignment</span></a>
+           <a href="#"><i class="fas fa-user"></i><span>Attendance</span></a>
+          </div>
+        </li>
+        <!--Academics End-->
+        <!--Account start-->
+        <li class="item" id="messages">
+          <a href="#messages" class="menu-btn">
+           <i class="fas fa-user-circle"></i><span>Accounts<i class="fas fa-chevron-down drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+
+            <a href="#"><i class="fas fa-receipt"></i><span>Fee Receipt</span></a>
+          </div>
+        </li>
+         <!--Account end-->
+         <!--Asportal-->
+        <li class="item" id="settings">
+          <a href="#settings" class="menu-btn">
+           <i class="fas fa-tasks"></i><span>Asportal<i class="fas fa-chevron-down drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="Teacherasportal.html"><i class="fas fa-upload"></i><span>Lab ssignment </span></a>
+          </div>
+        </li>
+         <!--Asportal End-->
+         <!--Examinations-->
+        <li class="item" id="exam">
+          <a href="#exam" class="menu-btn">
+           <i class="fa fa-university"></i><span>Examination<i class="fas fa-chevron-down drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="#"><i class="fas fa-poll-h"></i><span>Result</span></a>
+          </div>
+        </li>
+         <!--Examination End-->
+    </div>
+  </div>
+  <!--Sidebar end-->
+  <!--main container start-->
+  <div class="main-container">
+    <div class="card">   
+          <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.table-box
+{
+    margin: 40px auto;
+    background-color: white;
+}
+
+.table-row{
+    display: table;
+    width: 100%;
+    margin: 10px auto;
+    font-family: sans-serif;
+    background: transparent;
+    padding: 12px 0;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bolder;
+    box-shadow: 0 1px 4px 0px rgba(5, 5, 46, 0.911);
+}
+.table-head{
+    background: #8665f7;
+    box-shadow: none;
+    color: #fff;
+    font-weight: 600;
+}
+.table-head .table-cell{
+    border-right: none;
+}
+.table-cell{
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    padding: 4px 0;
+    border-right: 1px solid #d6d4d4;
+    vertical-align: middle;
+}
+.first-cell{
+    text-align: left;
+    padding-left: 10px;
+}
+.last-cell{
+    border-right: none;
+    color:#fff
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+p{
+  font-weight: bolder;
+  font-family: sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .table-row {
+    font-size: 11px;
+  }
+}
+              </style>
+        </head>
+        
+        
+        <p><center>MATHEMATICS ASSIGNMENT</center></p>
+        <div class="table-box">
+                <div class="table-row table-head">
+                    <div class="table-cell first-cell">
+                        <p>NAME OF THE STUDENT</p>
+                    </div>
+                    <div class="table-cell">
+                        <p>STATUS OF ASSIGNMENT</p>
+                    </div>
+                    <div class="table-cell"> 
+                        <p>DOWNLOAD</p> 
+                    </a>
+                    </div> 
+                </div>
+        
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Dhananjay</p>
+                    </div>
+                    <div class="table-cell">
+                        <p>YES / NO </p>
+                    </div>
+                    <div class="table-cell">
+                        <a href="#" download> 
+                            <button>Download</button> 
+                        </a>
+                    </div>   
+                </div>
+
+                <div class="table-row">
+                  <div class="table-cell first-cell">
+                      <p>Rohit</p>
+                  </div>
+                  <div class="table-cell">
+                      <p>YES / NO </p>
+                  </div>
+                  <div class="table-cell">
+                      <a href="#" download> 
+                          <button>Download</button> 
+                      </a>
+                  </div>   
+              </div>
+        
+              <div class="table-row">
+                <div class="table-cell first-cell">
+                    <p>Aniket</p>
+                </div>
+                <div class="table-cell">
+                    <p>YES / NO </p>
+                </div>
+                <div class="table-cell">
+                    <a href="#" download> 
+                        <button>Download</button> 
+                    </a>
+                </div>   
+            </div>
+        
+                </div>   
+                
+
+    </div>
+  </div>
+  <!--main container end-->
+  </div>
+  <!--Wrapper end-->
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".sidebar-btn").click(function(){
+      $(".wrapper").toggleClass("collapse");
+    });
+  });
+  </script>
+</body>
+</html>

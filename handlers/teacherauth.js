@@ -32,12 +32,12 @@ module.exports.login = function (req, res) {
         const user = new db.User({
             username: username,
             password: password,
-            role: "student"
+            role: "teacher"
         });
 
         if(!user) {
             console.log("user not found");
-            res.redirect('/student/auth')
+            res.redirect('/teacher/auth')
         }
 
         req.login(user, function (err) {
@@ -46,7 +46,7 @@ module.exports.login = function (req, res) {
             } else {
         console.log("here")
                 passport.authenticate("local")(req, res, function () {
-                    res.redirect("/student");
+                    res.redirect("/teacher");
                 });
             }
         });
@@ -63,7 +63,7 @@ module.exports.register = async function (req, res) {
         await db.User.register(
             {
                 username: req.body.username,
-                role: "student"
+                role: "teacher"
             },
             req.body.password,
             function (err, user) {
@@ -72,7 +72,7 @@ module.exports.register = async function (req, res) {
                     // res.redirect("/professional/register");
                 } else {
                     passport.authenticate("local")(req, res, function () {
-                        res.redirect("/student");
+                        res.redirect("/teacher");
                     });
                 }
             }
