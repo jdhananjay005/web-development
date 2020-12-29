@@ -38,13 +38,16 @@ passport.deserializeUser(function (id, done) {
     });
 });
 
+app.get("/", (req, res, next) => {
+    res.render("home");
+})
 app.use("/student", require("./routes/student"));
 app.use("/teacher", require("./routes/teacher"))
 
 app.use((req, res, next) => {
-  let err = new Error('Page Not Found');
-  err.status = 404;
-  next(err);
+    let err = new Error('Page Not Found');
+    err.status = 404;
+    next(err);
 });
 
 
