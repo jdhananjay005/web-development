@@ -48,7 +48,8 @@ router.get("/assignments/view/:sub", function (req, res) {
 
 router.get("/assignments/download", function (req, res) {
     console.log("here dskfj")
-    const file = `uploads/sub-${req.query.sub}.pdf`;
+    // const file = `uploads/asgn-mathematics-dhananjay@gmail.com.pdf`;
+    const file = "uploads/asgn-mathematics-dhananjay@gmail.com.pdf";
     res.download(file); // Set disposition and send it.
 });
 
