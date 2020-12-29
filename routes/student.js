@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
 
     // By default, multer removes file extensions so let's add them back
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        cb(null, file.fieldname + '-' + req.query.sub + '-' + req.user.username + path.extname(file.originalname));
     }
 });
 
@@ -21,7 +21,8 @@ const storage = multer.diskStorage({
 
 router.get("/", function (req, res) {
     if (req.isAuthenticated()) {
-        res.render("student/dashboard");
+        console.log("current user: ", req.user)
+        res.render("student/dashboard", {name: req.user.username});
     } else {
         // res.render("start");
         res.redirect("/student/auth")
@@ -30,7 +31,7 @@ router.get("/", function (req, res) {
 
 router.get("/assignments", function (req, res) {
     if (req.isAuthenticated()) {
-        res.render("student/ha");
+        res.render("student/ha", {name: req.user.username});
     } else {
         // res.render("start");
         res.redirect("/student/auth")
@@ -38,13 +39,13 @@ router.get("/assignments", function (req, res) {
 });
 
 router.get("/assignments/download", function (req, res) {
-    const file = `uploads/profile_pic-1609143742464`;
+    const file = `uploads/sub-${req.query.sub}.pdf`;
     res.download(file); // Set disposition and send it.
 });
 
 router.post('/assignments/upload', (req, res) => {
     // 'profile_pic' is the name of our file input field in the HTML form
-    let upload = multer({storage: storage}).single('profile_pic');
+    let upload = multer({storage: storage}).single('asgn');
 
     upload(req, res, function (err) {
         // req.file contains information of uploaded file

@@ -32,7 +32,6 @@ module.exports.login = function (req, res) {
         const user = new db.User({
             username: username,
             password: password,
-            role: "teacher"
         });
 
         if(!user) {

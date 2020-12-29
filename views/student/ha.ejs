@@ -33,7 +33,7 @@
             <div class="sidebar-menu">
                 <center class="profile">
                     <img src="blank.png" alt="">
-                    <p>ISHAN GIRGAONKAR</p>
+                    <p style="text-transform: uppercase"><%= name %></p>
                 </center>
                 <!--Dashboard-->
                 <li class="item">
@@ -100,7 +100,7 @@
 
                     .table-box {
                         margin: 40px auto;
-                        background-color: red;
+                        background-color: white;
                     }
 
                     .table-row {
@@ -156,6 +156,10 @@
                         font-family: sans-serif;
                     }
 
+                    #myFile {
+                        color: black;
+                    }
+
                     @media only screen and (max-width: 600px) {
                         .table-row {
                             font-size: 11px;
@@ -192,25 +196,15 @@
                             <p>MATHEMATICS</p>
                         </div>
                         <div class="table-cell last-cell">
-                            <a href="/student/assignments/download" download>
+                            <a href="/student/assignments/download?sub=mathematics" download>
                                 <button>Download</button>
                             </a>
                         </div>
                         <div class="table-cell last-cell">
-                            <form method="POST" action="/student/assignments/upload" enctype="multipart/form-data">
-                                <div>
-                                    <label>Select File:</label>
-                                    <input type="file" name="profile_pic" />
-                                </div>
-                                <div>
-                                    <input type="submit" name="btn_upload_profile_pic" value="Upload" />
-                                </div>
+                            <form method="POST" action="/student/assignments/upload?sub=mathematics" enctype="multipart/form-data">
+                                <input type="file" id="myFile" name="asgn" />
+                                <input type="submit" name="btn_upload_profile_pic" value="Upload" />
                             </form>
-                            <!-- <form action="/student/assignments/upload" enctype="multipart/form-data" method="post"> -->
-                            <!--     <input type="file" id="myFile" name="myFile"> -->
-                            <!--     <input type="file" name="file-to-upload"> -->
-                            <!--     <input type="submit" value="Upload"> -->
-                            <!-- </form> -->
                         </div>
                     </div>
 
@@ -223,14 +217,15 @@
                             <p>PHYSICS</p>
                         </div>
                         <div class="table-cell last-cell">
-                            <a href="#" download>
+                            <a href="/student/assignments/download?sub=physics" download>
                                 <button>Download</button>
                             </a>
                         </div>
                         <div class="table-cell last-cell">
-                            <form action="">
-                                <input type="file" id="myFile" name="filename">
-                                <input type="submit">
+                            <form method="POST" action="/student/assignments/upload?sub=physics"
+                                enctype="multipart/form-data">
+                                <input type="file" id="myFile" name="asgn" />
+                                <input type="submit" name="btn_upload_profile_pic" value="Upload" />
                             </form>
                         </div>
                     </div>
@@ -242,15 +237,16 @@
                         <div class="table-cell">
                             <p>CHEMISTRY</p>
                         </div>
-                        <div class="table-cell">
-                            <a href="#" download>
+                        <div class="table-cell last-cell">
+                            <a href="/student/assignments/download?sub=chemistry" download>
                                 <button>Download</button>
                             </a>
                         </div>
                         <div class="table-cell last-cell">
-                            <form action="">
-                                <input type="file" id="myFile" name="filename">
-                                <input type="submit">
+                            <form method="POST" action="/student/assignments/upload?sub=chemistry"
+                                enctype="multipart/form-data">
+                                <input type="file" id="myFile" name="asgn" />
+                                <input type="submit" name="btn_upload_profile_pic" value="Upload" />
                             </form>
                         </div>
                     </div>

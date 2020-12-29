@@ -32,18 +32,18 @@ module.exports.login = function (req, res) {
         const user = new db.User({
             username: username,
             password: password,
-            role: "student"
         });
-
+        console.log(user)
         if(!user) {
             console.log("user not found");
-            res.redirect('/student/auth')
+            return res.redirect('/student/auth')
         }
 
         req.login(user, function (err) {
             if (err) {
                 console.log(err);
             } else {
+                console.log(user)
         console.log("here")
                 passport.authenticate("local")(req, res, function () {
                     res.redirect("/student");

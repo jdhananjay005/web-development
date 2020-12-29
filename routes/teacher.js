@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 
 router.get("/", function (req, res) {
     if (req.isAuthenticated()) {
-        res.render("teacher/dashboard");
+        res.render("teacher/dashboard", {name: req.user.username});
     } else {
         // res.render("start");
         res.redirect("/teacher/auth")
@@ -30,7 +30,16 @@ router.get("/", function (req, res) {
 
 router.get("/assignments", function (req, res) {
     if (req.isAuthenticated()) {
-        res.render("teacher/ha");
+        res.render("teacher/ha", {name: req.user.username});
+    } else {
+        // res.render("start");
+        res.redirect("/teacher/auth")
+    }
+});
+
+router.get("/assignments/view/:sub", function (req, res) {
+    if (req.isAuthenticated()) {
+        res.render("teacher/asgn", {name: req.user.username, sub: req.params.sub});
     } else {
         // res.render("start");
         res.redirect("/teacher/auth")
@@ -38,6 +47,7 @@ router.get("/assignments", function (req, res) {
 });
 
 router.get("/assignments/download", function (req, res) {
+    console.log("here dskfj")
     const file = `uploads/sub-${req.query.sub}.pdf`;
     res.download(file); // Set disposition and send it.
 });
