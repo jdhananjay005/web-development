@@ -37,6 +37,15 @@ router.get("/assignments", function (req, res) {
     }
 });
 
+router.get("/assignments/view/:sub/download", function (req, res) {
+    console.log("here kdsjflkafjdlkf")
+    // const file = `uploads/asgn-mathematics-dhananjay@gmail.com.pdf`;
+    // const file = "uploads/asgn-mathematics-dhananjay@gmail.com.pdf";
+    const file = `uploads/asgn-${req.params.sub}-${req.user.username}.pdf`
+    // const file = `uploads/sub-${req.query.sub}.pdf`
+    res.download(file); // Set disposition and send it.
+});
+
 router.get("/assignments/view/:sub", function (req, res) {
     if (req.isAuthenticated()) {
         res.render("teacher/asgn", {name: req.user.username, sub: req.params.sub});
@@ -49,7 +58,8 @@ router.get("/assignments/view/:sub", function (req, res) {
 router.get("/assignments/download", function (req, res) {
     console.log("here dskfj")
     // const file = `uploads/asgn-mathematics-dhananjay@gmail.com.pdf`;
-    const file = "uploads/asgn-mathematics-dhananjay@gmail.com.pdf";
+    // const file = "uploads/asgn-mathematics-dhananjay@gmail.com.pdf";
+    const file = `uploads/sub-${req.query.sub}.pdf`
     res.download(file); // Set disposition and send it.
 });
 
