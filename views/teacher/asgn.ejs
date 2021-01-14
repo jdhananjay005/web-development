@@ -183,48 +183,63 @@
                             </a>
                         </div>
                     </div>
-
+        <% students.forEach(function(student){%>
                     <div class="table-row">
                         <div class="table-cell first-cell">
-                            <p>Dhananjay</p>
+                            <p><%= student.username %></p>
                         </div>
                         <div class="table-cell">
                             <p>Submitted</p>
                         </div>
                         <div class="table-cell">
-                            <a href="/teacher/assignments/view/mathematics/download?user=<%= name %>" download>
+                            <a href="/teacher/assignments/view/<%= sub %>/download?user=<%= student.username %>" download>
                                 <button>Download</button>
                             </a>
                         </div>
                     </div>
+ <% }); %>
 
-                    <div class="table-row">
-                        <div class="table-cell first-cell">
-                            <p>Rohit</p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Not Submitted</p>
-                        </div>
-                        <div class="table-cell">
-                            <a href="/teacher/assignments/view/mathematics" download>
-                                <button>Download</button>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="table-row">
-                        <div class="table-cell first-cell">
-                            <p>Aniket</p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Not Submitted</p>
-                        </div>
-                        <div class="table-cell">
-                            <a href="/teacher/assignments/download?sub=mathematics" download>
-                                <button>Download</button>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- <div class="table-row"> -->
+                    <!--     <div class="table-cell first-cell"> -->
+                    <!--         <p>Dhananjay</p> -->
+                    <!--     </div> -->
+                    <!--     <div class="table-cell"> -->
+                    <!--         <p>Submitted</p> -->
+                    <!--     </div> -->
+                    <!--     <div class="table-cell"> -->
+                    <!--         <a href="/teacher/assignments/view/mathematics/download?user=<%= name %>" download> -->
+                    <!--             <button>Download</button> -->
+                    <!--         </a> -->
+                    <!--     </div> -->
+                    <!-- </div> -->
+                    <!--  -->
+                    <!-- <div class="table-row"> -->
+                    <!--     <div class="table-cell first-cell"> -->
+                    <!--         <p>Rohit</p> -->
+                    <!--     </div> -->
+                    <!--     <div class="table-cell"> -->
+                    <!--         <p>Not Submitted</p> -->
+                    <!--     </div> -->
+                    <!--     <div class="table-cell"> -->
+                    <!--         <a href="/teacher/assignments/view/mathematics" download> -->
+                    <!--             <button>Download</button> -->
+                    <!--         </a> -->
+                    <!--     </div> -->
+                    <!-- </div> -->
+                    <!--  -->
+                    <!-- <div class="table-row"> -->
+                    <!--     <div class="table-cell first-cell"> -->
+                    <!--         <p>Aniket</p> -->
+                    <!--     </div> -->
+                    <!--     <div class="table-cell"> -->
+                    <!--         <p>Not Submitted</p> -->
+                    <!--     </div> -->
+                    <!--     <div class="table-cell"> -->
+                    <!--         <a href="/teacher/assignments/download?sub=mathematics" download> -->
+                    <!--             <button>Download</button> -->
+                    <!--         </a> -->
+                    <!--     </div> -->
+                    <!-- </div> -->
 
                 </div>
 
